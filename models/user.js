@@ -19,7 +19,10 @@ var schema = new Schema({
         required: false
     },
     referral_code: String,
-    token: Number,
+    points: {
+        type: Number,
+        default: 0
+    },
     referral_code_expired: Date,
     referred_by: {
         type: mongoose.SchemaTypes.ObjectId,

@@ -150,6 +150,8 @@ const signup = async (req, res) => {
 
                 if (data) {
                     referralModel.addReferrals(data, savedUser)
+                    data.points = Number(data.points) + 5
+                    data.save().then(result => result)
                 }
             }
             return res.status(200).json({
